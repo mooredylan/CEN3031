@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Dylan\\source\\repos\\Budgetting\\Budgetting\\Budgetting.csproj",
+      "projectUniqueName": "C:\\Users\\Dylan\\Documents\\GitHub\\CEN3031\\Budgetting\\Budgetting.csproj",
       "projectName": "Budgetting",
-      "projectPath": "C:\\Users\\Dylan\\source\\repos\\Budgetting\\Budgetting\\Budgetting.csproj",
+      "projectPath": "C:\\Users\\Dylan\\Documents\\GitHub\\CEN3031\\Budgetting\\Budgetting.csproj",
       "packagesPath": "C:\\Users\\Dylan\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Dylan\\source\\repos\\Budgetting\\Budgetting\\obj\\",
+      "outputPath": "C:\\Users\\Dylan\\Documents\\GitHub\\CEN3031\\Budgetting\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
