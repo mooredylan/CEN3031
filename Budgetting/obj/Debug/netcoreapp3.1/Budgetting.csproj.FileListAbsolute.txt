@@ -1,0 +1,17 @@
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\bin\Debug\netcoreapp3.1\Budgetting.exe
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\bin\Debug\netcoreapp3.1\Budgetting.deps.json
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\bin\Debug\netcoreapp3.1\Budgetting.runtimeconfig.json
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\bin\Debug\netcoreapp3.1\Budgetting.runtimeconfig.dev.json
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\bin\Debug\netcoreapp3.1\Budgetting.dll
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\bin\Debug\netcoreapp3.1\Budgetting.pdb
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.csproj.AssemblyReference.cache
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.Form1.resources
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.LogInForm.resources
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.csproj.GenerateResource.cache
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.AssemblyInfoInputs.cache
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.AssemblyInfo.cs
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.csproj.CoreCompileInputs.cache
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.dll
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.pdb
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.genruntimeconfig.cache
