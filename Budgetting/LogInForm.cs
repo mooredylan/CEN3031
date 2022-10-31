@@ -8,6 +8,9 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Threading;
+using Budgetting.Data;
+using Budgetting.ViewModels;
+using Budgetting.Models;
 
 namespace Budgetting
 {
@@ -15,6 +18,8 @@ namespace Budgetting
     {
         Thread th;
         private string username, password;
+
+        DatabaseRepository db = new DatabaseRepository();
 
         public LogInForm()
         {
@@ -34,14 +39,36 @@ namespace Budgetting
         private void logInButton_Click(object sender, EventArgs e)
         {
             Console.WriteLine($"Username: {username} \nPassword: {password}");
-            /*
-             * INSERT USERNAME/PASSWORD HANDLING HERE
-             * CATCH PROFILE OBJECT
-             */
-            this.Close();
-            th = new Thread(showMainMenu);
-            th.SetApartmentState(ApartmentState.STA);
-            th.Start();
+
+            Profile profile = this.db.GetProfile(username, password);
+
+            if (profile == null)
+            {
+                profile = this.db.CreateProfile(
+                    new NewProfile()
+                    {
+                        Username = username,
+                        Password = password
+                    }
+                );
+            }
+
+            if(profile != null)
+            {
+                Console.WriteLine($"Id: {profile.Id}");
+                
+                //TOOD pass profile to profile page
+
+                this.Close();
+                th = new Thread(showMainMenu);
+                th.SetApartmentState(ApartmentState.STA);
+                th.Start();
+            }
+            else
+            {
+                //TODO handle invalid login for username
+                //TODO probably make login and register page into two different forms.
+            }
         }
 
         private void showMainMenu(object obj)
