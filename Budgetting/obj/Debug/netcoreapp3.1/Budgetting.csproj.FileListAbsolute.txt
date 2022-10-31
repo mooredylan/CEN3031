@@ -5,7 +5,6 @@ C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\bin\Debug\netcoreapp3.1\Budge
 C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\bin\Debug\netcoreapp3.1\Budgetting.dll
 C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\bin\Debug\netcoreapp3.1\Budgetting.pdb
 C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.csproj.AssemblyReference.cache
-C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.Form1.resources
 C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.LogInForm.resources
 C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.csproj.GenerateResource.cache
 C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.GeneratedMSBuildEditorConfig.editorconfig
@@ -15,3 +14,4 @@ C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budge
 C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.dll
 C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.pdb
 C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.genruntimeconfig.cache
+C:\Users\Dylan\Documents\GitHub\CEN3031\Budgetting\obj\Debug\netcoreapp3.1\Budgetting.MainMenu.resources
