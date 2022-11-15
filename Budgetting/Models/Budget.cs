@@ -95,7 +95,7 @@ namespace Budgetting.Models
         } }
 
         public double BudgetUtilization { get {
-            return this.MonthlyTotalNetIncome / this.MonthlyTotalExpenses;
+            return this.MonthlyTotalExpenses / this.MonthlyTotalNetIncome;
         } }
 
         public double ExtraBudget { get {

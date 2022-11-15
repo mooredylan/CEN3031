@@ -23,6 +23,8 @@ namespace Budgetting.Data
         /// </summary>
         public Profile GetProfile(string username, string password)
         {
+            if(String.IsNullOrEmpty(username) || String.IsNullOrEmpty(password)) return null;
+            
             return this.context.Profiles
                 .Include(x => x.Budgets)
                 .ToList()
@@ -51,6 +53,8 @@ namespace Budgetting.Data
         /// </summary>
         public Profile CreateProfile(NewProfile newProfile)
         {
+            if(newProfile == null) return null;
+
             Profile existing = this.context.Profiles.SingleOrDefault(x => x.Username.ToLower() == newProfile.Username.ToLower());
 
             if(existing != null)
@@ -76,6 +80,8 @@ namespace Budgetting.Data
         /// </summary>
         public Profile SaveBudget(Profile profile, Budget budget)
         {
+            if(profile == null || budget == null) return null;
+
             Profile curProfile = this.context.Profiles.SingleOrDefault(x => x.Id == profile.Id);
 
             if(curProfile != null)
