@@ -29,165 +29,184 @@ namespace Budgetting
         /// </summary>
         private void InitializeComponent()
         {
-            this.splitContainer1 = new System.Windows.Forms.SplitContainer();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.logOutButton = new System.Windows.Forms.Button();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.listBox = new System.Windows.Forms.ListBox();
-            this.listBoxDescription = new System.Windows.Forms.Label();
             this.newBudgetButton = new System.Windows.Forms.Button();
-            this.loadBudgetButton = new System.Windows.Forms.Button();
-            this.thirdButton = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).BeginInit();
-            this.splitContainer1.Panel1.SuspendLayout();
-            this.splitContainer1.Panel2.SuspendLayout();
-            this.splitContainer1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
+            this.budgetsList = new System.Windows.Forms.ListView();
+            this.selectBudgetLabel = new System.Windows.Forms.Label();
+            this.currentBudgetPanel = new System.Windows.Forms.Panel();
+            this.budgetUtilizationLabel = new System.Windows.Forms.Label();
+            this.monthlyExpensesLabel = new System.Windows.Forms.Label();
+            this.totalNetIncomeLabel = new System.Windows.Forms.Label();
+            this.taxBracketLabel = new System.Windows.Forms.Label();
+            this.yearlyTotalGrossIncomeLabel = new System.Windows.Forms.Label();
+            this.netIncomeLabel = new System.Windows.Forms.Label();
+            this.remainingBudgetLabel = new System.Windows.Forms.Label();
+            this.currentBudgetPanel.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // splitContainer1
-            // 
-            this.splitContainer1.Cursor = System.Windows.Forms.Cursors.VSplit;
-            this.splitContainer1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.splitContainer1.Location = new System.Drawing.Point(0, 0);
-            this.splitContainer1.Name = "splitContainer1";
-            // 
-            // splitContainer1.Panel1
-            // 
-            this.splitContainer1.Panel1.Controls.Add(this.tableLayoutPanel2);
-            // 
-            // splitContainer1.Panel2
-            // 
-            this.splitContainer1.Panel2.Controls.Add(this.tableLayoutPanel1);
-            this.splitContainer1.Size = new System.Drawing.Size(800, 450);
-            this.splitContainer1.SplitterDistance = 401;
-            this.splitContainer1.TabIndex = 0;
-            // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 1;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Controls.Add(this.thirdButton, 0, 2);
-            this.tableLayoutPanel2.Controls.Add(this.loadBudgetButton, 0, 1);
-            this.tableLayoutPanel2.Controls.Add(this.logOutButton, 0, 3);
-            this.tableLayoutPanel2.Controls.Add(this.newBudgetButton, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 4;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 25F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(401, 450);
-            this.tableLayoutPanel2.TabIndex = 1;
             // 
             // logOutButton
             // 
             this.logOutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.logOutButton.Location = new System.Drawing.Point(3, 415);
+            this.logOutButton.Location = new System.Drawing.Point(90, 291);
+            this.logOutButton.Margin = new System.Windows.Forms.Padding(6);
             this.logOutButton.Name = "logOutButton";
-            this.logOutButton.Size = new System.Drawing.Size(71, 32);
+            this.logOutButton.Size = new System.Drawing.Size(132, 68);
             this.logOutButton.TabIndex = 0;
             this.logOutButton.Text = "LOG OUT";
             this.logOutButton.UseVisualStyleBackColor = true;
             this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
             // 
-            // tableLayoutPanel1
-            // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Controls.Add(this.listBox, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.listBoxDescription, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 12.22222F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 87.77778F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(395, 450);
-            this.tableLayoutPanel1.TabIndex = 0;
-            // 
-            // listBox
-            // 
-            this.listBox.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.listBox.FormattingEnabled = true;
-            this.listBox.ItemHeight = 15;
-            this.listBox.Location = new System.Drawing.Point(3, 57);
-            this.listBox.Name = "listBox";
-            this.listBox.Size = new System.Drawing.Size(389, 390);
-            this.listBox.TabIndex = 0;
-            this.listBox.SelectedIndexChanged += new System.EventHandler(this.listBox1_SelectedIndexChanged);
-            // 
-            // listBoxDescription
-            // 
-            this.listBoxDescription.AutoSize = true;
-            this.listBoxDescription.Location = new System.Drawing.Point(3, 0);
-            this.listBoxDescription.Name = "listBoxDescription";
-            this.listBoxDescription.Size = new System.Drawing.Size(92, 15);
-            this.listBoxDescription.TabIndex = 1;
-            this.listBoxDescription.Text = "Recent Budgets:";
-            // 
             // newBudgetButton
             // 
             this.newBudgetButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.newBudgetButton.Location = new System.Drawing.Point(100, 31);
+            this.newBudgetButton.Location = new System.Drawing.Point(90, 119);
+            this.newBudgetButton.Margin = new System.Windows.Forms.Padding(6);
             this.newBudgetButton.Name = "newBudgetButton";
-            this.newBudgetButton.Size = new System.Drawing.Size(200, 49);
+            this.newBudgetButton.Size = new System.Drawing.Size(371, 105);
             this.newBudgetButton.TabIndex = 1;
             this.newBudgetButton.Text = "CREATE NEW BUDGET";
             this.newBudgetButton.UseVisualStyleBackColor = true;
+            this.newBudgetButton.Click += new System.EventHandler(this.newBudgetButton_Click);
             // 
-            // loadBudgetButton
+            // budgetsList
             // 
-            this.loadBudgetButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.loadBudgetButton.Location = new System.Drawing.Point(100, 143);
-            this.loadBudgetButton.Name = "loadBudgetButton";
-            this.loadBudgetButton.Size = new System.Drawing.Size(200, 49);
-            this.loadBudgetButton.TabIndex = 2;
-            this.loadBudgetButton.Text = "LOAD EXISTING BUDGET";
-            this.loadBudgetButton.UseVisualStyleBackColor = true;
+            this.budgetsList.HideSelection = false;
+            this.budgetsList.Location = new System.Drawing.Point(90, 509);
+            this.budgetsList.Name = "budgetsList";
+            this.budgetsList.Size = new System.Drawing.Size(371, 297);
+            this.budgetsList.TabIndex = 2;
+            this.budgetsList.UseCompatibleStateImageBehavior = false;
+            this.budgetsList.SelectedIndexChanged += new System.EventHandler(this.budgetsList_SelectedIndexChanged);
             // 
-            // thirdButton
+            // selectBudgetLabel
             // 
-            this.thirdButton.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.thirdButton.Location = new System.Drawing.Point(100, 255);
-            this.thirdButton.Name = "thirdButton";
-            this.thirdButton.Size = new System.Drawing.Size(200, 49);
-            this.thirdButton.TabIndex = 3;
-            this.thirdButton.Text = "A THIRD BUTTON LOOKS NICER THAN JUST TWO";
-            this.thirdButton.UseVisualStyleBackColor = true;
+            this.selectBudgetLabel.AutoSize = true;
+            this.selectBudgetLabel.Font = new System.Drawing.Font("Segoe UI", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.selectBudgetLabel.Location = new System.Drawing.Point(696, 374);
+            this.selectBudgetLabel.Name = "selectBudgetLabel";
+            this.selectBudgetLabel.Size = new System.Drawing.Size(666, 130);
+            this.selectBudgetLabel.TabIndex = 3;
+            this.selectBudgetLabel.Text = "Select a budget.  \r\nIf no budget exists create one!";
+            this.selectBudgetLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.selectBudgetLabel.Visible = false;
+            // 
+            // currentBudgetPanel
+            // 
+            this.currentBudgetPanel.Controls.Add(this.remainingBudgetLabel);
+            this.currentBudgetPanel.Controls.Add(this.budgetUtilizationLabel);
+            this.currentBudgetPanel.Controls.Add(this.monthlyExpensesLabel);
+            this.currentBudgetPanel.Controls.Add(this.totalNetIncomeLabel);
+            this.currentBudgetPanel.Controls.Add(this.taxBracketLabel);
+            this.currentBudgetPanel.Controls.Add(this.yearlyTotalGrossIncomeLabel);
+            this.currentBudgetPanel.Controls.Add(this.netIncomeLabel);
+            this.currentBudgetPanel.Location = new System.Drawing.Point(630, 119);
+            this.currentBudgetPanel.Name = "currentBudgetPanel";
+            this.currentBudgetPanel.Size = new System.Drawing.Size(763, 687);
+            this.currentBudgetPanel.TabIndex = 4;
+            this.currentBudgetPanel.Visible = false;
+            // 
+            // budgetUtilizationLabel
+            // 
+            this.budgetUtilizationLabel.AutoSize = true;
+            this.budgetUtilizationLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.budgetUtilizationLabel.Location = new System.Drawing.Point(33, 581);
+            this.budgetUtilizationLabel.Name = "budgetUtilizationLabel";
+            this.budgetUtilizationLabel.Size = new System.Drawing.Size(281, 45);
+            this.budgetUtilizationLabel.TabIndex = 5;
+            this.budgetUtilizationLabel.Text = "Budget Utilization:";
+            // 
+            // monthlyExpensesLabel
+            // 
+            this.monthlyExpensesLabel.AutoSize = true;
+            this.monthlyExpensesLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.monthlyExpensesLabel.Location = new System.Drawing.Point(33, 412);
+            this.monthlyExpensesLabel.Name = "monthlyExpensesLabel";
+            this.monthlyExpensesLabel.Size = new System.Drawing.Size(284, 45);
+            this.monthlyExpensesLabel.TabIndex = 4;
+            this.monthlyExpensesLabel.Text = "Monthly Expenses:";
+            // 
+            // totalNetIncomeLabel
+            // 
+            this.totalNetIncomeLabel.AutoSize = true;
+            this.totalNetIncomeLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.totalNetIncomeLabel.Location = new System.Drawing.Point(33, 246);
+            this.totalNetIncomeLabel.Name = "totalNetIncomeLabel";
+            this.totalNetIncomeLabel.Size = new System.Drawing.Size(271, 45);
+            this.totalNetIncomeLabel.TabIndex = 3;
+            this.totalNetIncomeLabel.Text = "Total Net Income:";
+            // 
+            // taxBracketLabel
+            // 
+            this.taxBracketLabel.AutoSize = true;
+            this.taxBracketLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.taxBracketLabel.Location = new System.Drawing.Point(33, 159);
+            this.taxBracketLabel.Name = "taxBracketLabel";
+            this.taxBracketLabel.Size = new System.Drawing.Size(184, 45);
+            this.taxBracketLabel.TabIndex = 2;
+            this.taxBracketLabel.Text = "Tax Bracket:";
+            // 
+            // yearlyTotalGrossIncomeLabel
+            // 
+            this.yearlyTotalGrossIncomeLabel.AutoSize = true;
+            this.yearlyTotalGrossIncomeLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.yearlyTotalGrossIncomeLabel.Location = new System.Drawing.Point(33, 73);
+            this.yearlyTotalGrossIncomeLabel.Name = "yearlyTotalGrossIncomeLabel";
+            this.yearlyTotalGrossIncomeLabel.Size = new System.Drawing.Size(299, 45);
+            this.yearlyTotalGrossIncomeLabel.TabIndex = 1;
+            this.yearlyTotalGrossIncomeLabel.Text = "Total Gross Income:";
+            // 
+            // netIncomeLabel
+            // 
+            this.netIncomeLabel.AutoSize = true;
+            this.netIncomeLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.netIncomeLabel.Location = new System.Drawing.Point(33, 330);
+            this.netIncomeLabel.Name = "netIncomeLabel";
+            this.netIncomeLabel.Size = new System.Drawing.Size(321, 45);
+            this.netIncomeLabel.TabIndex = 0;
+            this.netIncomeLabel.Text = "Monthly Net Income:";
+            // 
+            // remainingBudgetLabel
+            // 
+            this.remainingBudgetLabel.AutoSize = true;
+            this.remainingBudgetLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.remainingBudgetLabel.Location = new System.Drawing.Point(33, 499);
+            this.remainingBudgetLabel.Name = "remainingBudgetLabel";
+            this.remainingBudgetLabel.Size = new System.Drawing.Size(288, 45);
+            this.remainingBudgetLabel.TabIndex = 6;
+            this.remainingBudgetLabel.Text = "Remaining Budget:";
             // 
             // MainMenu
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.splitContainer1);
+            this.ClientSize = new System.Drawing.Size(1486, 960);
+            this.Controls.Add(this.currentBudgetPanel);
+            this.Controls.Add(this.selectBudgetLabel);
+            this.Controls.Add(this.budgetsList);
+            this.Controls.Add(this.logOutButton);
+            this.Controls.Add(this.newBudgetButton);
+            this.Margin = new System.Windows.Forms.Padding(6);
             this.Name = "MainMenu";
             this.Text = "MainMenu";
-            this.splitContainer1.Panel1.ResumeLayout(false);
-            this.splitContainer1.Panel2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.splitContainer1)).EndInit();
-            this.splitContainer1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel1.PerformLayout();
+            this.currentBudgetPanel.ResumeLayout(false);
+            this.currentBudgetPanel.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.SplitContainer splitContainer1;
-        private System.Windows.Forms.ListBox listBox;
         private System.Windows.Forms.Button logOutButton;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Label listBoxDescription;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private System.Windows.Forms.Button thirdButton;
-        private System.Windows.Forms.Button loadBudgetButton;
         private System.Windows.Forms.Button newBudgetButton;
+        private System.Windows.Forms.ListView budgetsList;
+        private System.Windows.Forms.Label selectBudgetLabel;
+        private System.Windows.Forms.Panel currentBudgetPanel;
+        private System.Windows.Forms.Label netIncomeLabel;
+        private System.Windows.Forms.Label budgetUtilizationLabel;
+        private System.Windows.Forms.Label monthlyExpensesLabel;
+        private System.Windows.Forms.Label totalNetIncomeLabel;
+        private System.Windows.Forms.Label taxBracketLabel;
+        private System.Windows.Forms.Label yearlyTotalGrossIncomeLabel;
+        private System.Windows.Forms.Label remainingBudgetLabel;
     }
 }

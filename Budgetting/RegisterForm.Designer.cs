@@ -1,7 +1,7 @@
 ﻿
 namespace Budgetting
 {
-    partial class LogInForm
+    partial class RegisterForm
     {
         /// <summary>
         ///  Required designer variable.
@@ -33,9 +33,9 @@ namespace Budgetting
             this.passwordField = new System.Windows.Forms.TextBox();
             this.passwordLabel = new System.Windows.Forms.Label();
             this.usernameLabel = new System.Windows.Forms.Label();
-            this.logInButton = new System.Windows.Forms.Button();
-            this.noAccountLabel = new System.Windows.Forms.Label();
+            this.accountExistsLabel = new System.Windows.Forms.Label();
             this.createAccountButton = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // usernameField
@@ -80,49 +80,49 @@ namespace Budgetting
             this.usernameLabel.TabIndex = 3;
             this.usernameLabel.Text = "USERNAME";
             // 
-            // logInButton
+            // accountExistsLabel
             // 
-            this.logInButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.logInButton.Location = new System.Drawing.Point(258, 410);
-            this.logInButton.Margin = new System.Windows.Forms.Padding(6);
-            this.logInButton.Name = "logInButton";
-            this.logInButton.Size = new System.Drawing.Size(154, 91);
-            this.logInButton.TabIndex = 4;
-            this.logInButton.Text = "Log in";
-            this.logInButton.UseVisualStyleBackColor = true;
-            this.logInButton.Click += new System.EventHandler(this.logInButton_Click);
-            // 
-            // noAccountLabel
-            // 
-            this.noAccountLabel.AutoSize = true;
-            this.noAccountLabel.ForeColor = System.Drawing.Color.Red;
-            this.noAccountLabel.Location = new System.Drawing.Point(105, 327);
-            this.noAccountLabel.Name = "noAccountLabel";
-            this.noAccountLabel.Size = new System.Drawing.Size(260, 32);
-            this.noAccountLabel.TabIndex = 6;
-            this.noAccountLabel.Text = "Could not find account";
-            this.noAccountLabel.Visible = false;
+            this.accountExistsLabel.AutoSize = true;
+            this.accountExistsLabel.ForeColor = System.Drawing.Color.Red;
+            this.accountExistsLabel.Location = new System.Drawing.Point(105, 327);
+            this.accountExistsLabel.Name = "accountExistsLabel";
+            this.accountExistsLabel.Size = new System.Drawing.Size(250, 32);
+            this.accountExistsLabel.TabIndex = 6;
+            this.accountExistsLabel.Text = "Account already exists";
+            this.accountExistsLabel.Visible = false;
             // 
             // createAccountButton
             // 
             this.createAccountButton.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
-            this.createAccountButton.Location = new System.Drawing.Point(43, 410);
+            this.createAccountButton.Location = new System.Drawing.Point(256, 402);
             this.createAccountButton.Margin = new System.Windows.Forms.Padding(6);
             this.createAccountButton.Name = "createAccountButton";
             this.createAccountButton.Size = new System.Drawing.Size(154, 91);
             this.createAccountButton.TabIndex = 5;
             this.createAccountButton.Text = "Create Account";
             this.createAccountButton.UseVisualStyleBackColor = true;
-            this.createAccountButton.Click += new System.EventHandler(this.createAccountButton_Click);
+            this.createAccountButton.Click += new System.EventHandler(this.registerButton_Click);
             // 
-            // LogInForm
+            // button1
+            // 
+            this.button1.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
+            this.button1.Location = new System.Drawing.Point(49, 402);
+            this.button1.Margin = new System.Windows.Forms.Padding(6);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(154, 91);
+            this.button1.TabIndex = 7;
+            this.button1.Text = "Back";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(459, 574);
-            this.Controls.Add(this.noAccountLabel);
+            this.Controls.Add(this.button1);
+            this.Controls.Add(this.accountExistsLabel);
             this.Controls.Add(this.createAccountButton);
-            this.Controls.Add(this.logInButton);
             this.Controls.Add(this.usernameLabel);
             this.Controls.Add(this.passwordLabel);
             this.Controls.Add(this.passwordField);
@@ -131,7 +131,7 @@ namespace Budgetting
             this.MaximizeBox = false;
             this.MaximumSize = new System.Drawing.Size(485, 645);
             this.MinimumSize = new System.Drawing.Size(485, 645);
-            this.Name = "LogInForm";
+            this.Name = "RegisterForm";
             this.Text = "Form1";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -144,9 +144,9 @@ namespace Budgetting
         private System.Windows.Forms.TextBox passwordField;
         private System.Windows.Forms.Label passwordLabel;
         private System.Windows.Forms.Label usernameLabel;
-        private System.Windows.Forms.Button logInButton;
-        private System.Windows.Forms.Label noAccountLabel;
+        private System.Windows.Forms.Label accountExistsLabel;
         private System.Windows.Forms.Button createAccountButton;
+        private System.Windows.Forms.Button button1;
     }
 }
 
