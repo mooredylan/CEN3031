@@ -24,7 +24,7 @@ namespace Budgetting.Data
         public Profile GetProfile(string username, string password)
         {
             return this.context.Profiles
-                .Include(x => x.Budget)
+                .Include(x => x.Budgets)
                 .ToList()
                 .SingleOrDefault(x => 
                     x.Username.ToLower() == username.ToLower() 
@@ -32,9 +32,21 @@ namespace Budgetting.Data
                 );
         }
 
-        
         /// <summary>
         /// Gets 1 profile based on username and password
+        /// </summary>
+        public Profile GetProfile(int id)
+        {
+            return this.context.Profiles
+                .Include(x => x.Budgets)
+                .ToList()
+                .SingleOrDefault(x => 
+                    x.Id == id
+                );
+        }
+        
+        /// <summary>
+        /// Creates a new profile
         /// Returns the created profile on success
         /// </summary>
         public Profile CreateProfile(NewProfile newProfile)
@@ -56,6 +68,24 @@ namespace Budgetting.Data
             this.context.SaveChanges();
 
             return profile;
+        }
+
+        /// <summary>
+        /// Creates a new budget on a profile
+        /// Returns the profile on success
+        /// </summary>
+        public Profile SaveBudget(Profile profile, Budget budget)
+        {
+            Profile curProfile = this.context.Profiles.SingleOrDefault(x => x.Id == profile.Id);
+
+            if(curProfile != null)
+            {
+                curProfile.Budgets.Add(budget);
+                this.context.SaveChanges();
+                return curProfile;
+            }
+
+            return null;
         }
 
     }

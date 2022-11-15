@@ -3,14 +3,16 @@ using Budgetting.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Budgetting.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20221115042639_AddedExpenseFields")]
+    partial class AddedExpenseFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -69,7 +71,8 @@ namespace Budgetting.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProfileId");
+                    b.HasIndex("ProfileId")
+                        .IsUnique();
 
                     b.ToTable("Budgets");
                 });
@@ -95,8 +98,8 @@ namespace Budgetting.Migrations
             modelBuilder.Entity("Budgetting.Models.Budget", b =>
                 {
                     b.HasOne("Budgetting.Models.Profile", null)
-                        .WithMany("Budget")
-                        .HasForeignKey("ProfileId")
+                        .WithOne("Budget")
+                        .HasForeignKey("Budgetting.Models.Budget", "ProfileId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

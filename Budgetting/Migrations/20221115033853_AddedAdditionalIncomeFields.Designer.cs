@@ -3,14 +3,16 @@ using Budgetting.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 
 namespace Budgetting.Migrations
 {
     [DbContext(typeof(DatabaseContext))]
-    partial class DatabaseContextModelSnapshot : ModelSnapshot
+    [Migration("20221115033853_AddedAdditionalIncomeFields")]
+    partial class AddedAdditionalIncomeFields
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -24,36 +26,6 @@ namespace Budgetting.Migrations
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<double>("MonthlyCarInsurance")
-                        .HasColumnType("float");
-
-                    b.Property<double>("MonthlyCarPayment")
-                        .HasColumnType("float");
-
-                    b.Property<double>("MonthlyCreditCard")
-                        .HasColumnType("float");
-
-                    b.Property<double>("MonthlyFood")
-                        .HasColumnType("float");
-
-                    b.Property<double>("MonthlyHealthInsurance")
-                        .HasColumnType("float");
-
-                    b.Property<double>("MonthlyInvesting")
-                        .HasColumnType("float");
-
-                    b.Property<double>("MonthlyRecreation")
-                        .HasColumnType("float");
-
-                    b.Property<double>("MonthlyRentAndUtilities")
-                        .HasColumnType("float");
-
-                    b.Property<double>("MonthlySaving")
-                        .HasColumnType("float");
-
-                    b.Property<double>("MonthlyStudentLoan")
-                        .HasColumnType("float");
 
                     b.Property<int>("ProfileId")
                         .HasColumnType("int");
@@ -69,7 +41,8 @@ namespace Budgetting.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProfileId");
+                    b.HasIndex("ProfileId")
+                        .IsUnique();
 
                     b.ToTable("Budgets");
                 });
@@ -95,8 +68,8 @@ namespace Budgetting.Migrations
             modelBuilder.Entity("Budgetting.Models.Budget", b =>
                 {
                     b.HasOne("Budgetting.Models.Profile", null)
-                        .WithMany("Budget")
-                        .HasForeignKey("ProfileId")
+                        .WithOne("Budget")
+                        .HasForeignKey("Budgetting.Models.Budget", "ProfileId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
                 });

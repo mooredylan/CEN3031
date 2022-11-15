@@ -14,19 +14,18 @@ using Budgetting.Models;
 
 namespace Budgetting
 {
-    public partial class LogInForm : Form
+    public partial class RegisterForm : Form
     {
         Thread th;
         private string username, password;
 
         DatabaseRepository db = new DatabaseRepository();
 
-        private Profile profile;
-
-        public LogInForm()
+        public RegisterForm()
         {
             InitializeComponent();
         }
+        
 
         private void usernameField_TextChanged(object sender, EventArgs e)
         {
@@ -38,48 +37,46 @@ namespace Budgetting
             password = passwordField.Text;
         }
 
-        private void logInButton_Click(object sender, EventArgs e)
+        private void registerButton_Click(object sender, EventArgs e)
         {
-            noAccountLabel.Visible = false;
+            accountExistsLabel.Visible = false;
 
             Console.WriteLine($"Username: {username} \nPassword: {password}");
 
             Profile profile = this.db.GetProfile(username, password);
 
-            if (profile == null)
+            if (profile != null)
             {
-                noAccountLabel.Visible = true;
+                accountExistsLabel.Visible = true;
             }
             else
             {
-                Console.WriteLine($"Id: {profile.Id}");
+                NewProfile newProfile = new NewProfile()
+                {
+                    Username = username,
+                    Password = password
+                };
 
-                this.profile = profile;
-
+                this.db.CreateProfile(newProfile);
+                
                 this.Close();
-                th = new Thread(showMainMenu);
+                th = new Thread(showLogin);
                 th.SetApartmentState(ApartmentState.STA);
                 th.Start();
             }
-            
         }
 
-        private void createAccountButton_Click(object sender, EventArgs e)
+        private void button1_Click(object sender, EventArgs e)
         {
             this.Close();
-            th = new Thread(showRegister);
+            th = new Thread(showLogin);
             th.SetApartmentState(ApartmentState.STA);
             th.Start();
         }
 
-        private void showMainMenu(object obj)
+        private void showLogin(object obj)
         {
-            Application.Run(new MainMenu(profile)); //Later, pass profile object as arg for MainMenu()
-        }
-
-        private void showRegister(object obj)
-        {
-            Application.Run(new RegisterForm()); //Later, pass profile object as arg for MainMenu()
+            Application.Run(new LogInForm()); //Later, pass profile object as arg for MainMenu()
         }
     }
 }
