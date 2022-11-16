@@ -87,7 +87,7 @@ namespace Budgetting.Models
         } }
 
         public double YearlyTotalNetIncome { get {
-            return this.YearlyTotalGrossIncome * this.TaxBracket;
+            return this.YearlyTotalGrossIncome * (1 - this.TaxBracket);
         } }
 
         public double MonthlyTotalNetIncome { get {

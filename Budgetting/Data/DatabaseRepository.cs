@@ -27,6 +27,7 @@ namespace Budgetting.Data
             
             return this.context.Profiles
                 .Include(x => x.Budgets)
+                .AsNoTracking()
                 .ToList()
                 .SingleOrDefault(x => 
                     x.Username.ToLower() == username.ToLower() 
@@ -41,6 +42,7 @@ namespace Budgetting.Data
         {
             return this.context.Profiles
                 .Include(x => x.Budgets)
+                .AsNoTracking()
                 .ToList()
                 .SingleOrDefault(x => 
                     x.Id == id
@@ -55,7 +57,7 @@ namespace Budgetting.Data
         {
             if(newProfile == null) return null;
 
-            Profile existing = this.context.Profiles.SingleOrDefault(x => x.Username.ToLower() == newProfile.Username.ToLower());
+            Profile existing = this.context.Profiles.AsNoTracking().SingleOrDefault(x => x.Username.ToLower() == newProfile.Username.ToLower());
 
             if(existing != null)
             {
@@ -82,13 +84,25 @@ namespace Budgetting.Data
         {
             if(profile == null || budget == null) return null;
 
-            Profile curProfile = this.context.Profiles.SingleOrDefault(x => x.Id == profile.Id);
+            Profile curProfile = this.GetProfile(profile.Id);
+
+            Budget curBudget = this.context.Budgets.AsNoTracking().SingleOrDefault(x => x.Id == budget.Id);
 
             if(curProfile != null)
             {
-                curProfile.Budgets.Add(budget);
+                if (curBudget == null)
+                {
+                    this.context.Add(budget);
+                }
+                else
+                {
+                    curBudget = budget;
+                    this.context.Update(curBudget);
+                }
+                
                 this.context.SaveChanges();
-                return curProfile;
+
+                return this.GetProfile(curProfile.Id);
             }
 
             return null;

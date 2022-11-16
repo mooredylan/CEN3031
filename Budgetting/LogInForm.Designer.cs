@@ -132,7 +132,7 @@ namespace Budgetting
             this.MaximumSize = new System.Drawing.Size(485, 645);
             this.MinimumSize = new System.Drawing.Size(485, 645);
             this.Name = "LogInForm";
-            this.Text = "Form1";
+            this.Text = "Login";
             this.ResumeLayout(false);
             this.PerformLayout();
 
