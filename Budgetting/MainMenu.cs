@@ -38,6 +38,7 @@ namespace Budgetting
             
             this.selectBudgetLabel.Visible = true;
             this.currentBudgetPanel.Visible = false;
+            this.editBudgetButton.Visible = false;
         }
 
         private void logOutButton_Click(object sender, EventArgs e)
@@ -56,6 +57,11 @@ namespace Budgetting
         private void showNewBudget(object obj)
         {
             Application.Run(new NewBudget(this.profile));
+        }
+
+        private void editBudget(object obj)
+        {
+            Application.Run(new NewBudget(this.profile, this.curBudget));
         }
 
         private void newBudgetButton_Click(object sender, EventArgs e)
@@ -77,6 +83,8 @@ namespace Budgetting
 
             this.curBudget = this.profile.Budgets[index];
 
+            this.editBudgetButton.Visible = true;
+
             this.updateBudgetLabels();
         }
 
@@ -89,6 +97,14 @@ namespace Budgetting
             this.monthlyExpensesLabel.Text = String.Format("Monthly Expenses: {0:C}",this.curBudget.MonthlyTotalExpenses);
             this.remainingBudgetLabel.Text = String.Format("Remaining Budget: {0:C}",this.curBudget.ExtraBudget);
             this.budgetUtilizationLabel.Text = String.Format("Budget Utilization: {0:P2}",this.curBudget.BudgetUtilization);
+        }
+
+        private void editBudgetButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            th = new Thread(editBudget);
+            th.SetApartmentState(ApartmentState.STA);
+            th.Start();
         }
     }
 }

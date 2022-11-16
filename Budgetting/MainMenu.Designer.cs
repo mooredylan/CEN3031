@@ -34,20 +34,21 @@ namespace Budgetting
             this.budgetsList = new System.Windows.Forms.ListView();
             this.selectBudgetLabel = new System.Windows.Forms.Label();
             this.currentBudgetPanel = new System.Windows.Forms.Panel();
+            this.remainingBudgetLabel = new System.Windows.Forms.Label();
             this.budgetUtilizationLabel = new System.Windows.Forms.Label();
             this.monthlyExpensesLabel = new System.Windows.Forms.Label();
             this.totalNetIncomeLabel = new System.Windows.Forms.Label();
             this.taxBracketLabel = new System.Windows.Forms.Label();
             this.yearlyTotalGrossIncomeLabel = new System.Windows.Forms.Label();
             this.netIncomeLabel = new System.Windows.Forms.Label();
-            this.remainingBudgetLabel = new System.Windows.Forms.Label();
+            this.editBudgetButton = new System.Windows.Forms.Button();
             this.currentBudgetPanel.SuspendLayout();
             this.SuspendLayout();
             // 
             // logOutButton
             // 
             this.logOutButton.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.logOutButton.Location = new System.Drawing.Point(90, 291);
+            this.logOutButton.Location = new System.Drawing.Point(90, 270);
             this.logOutButton.Margin = new System.Windows.Forms.Padding(6);
             this.logOutButton.Name = "logOutButton";
             this.logOutButton.Size = new System.Drawing.Size(132, 68);
@@ -104,6 +105,16 @@ namespace Budgetting
             this.currentBudgetPanel.Size = new System.Drawing.Size(763, 687);
             this.currentBudgetPanel.TabIndex = 4;
             this.currentBudgetPanel.Visible = false;
+            // 
+            // remainingBudgetLabel
+            // 
+            this.remainingBudgetLabel.AutoSize = true;
+            this.remainingBudgetLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.remainingBudgetLabel.Location = new System.Drawing.Point(33, 499);
+            this.remainingBudgetLabel.Name = "remainingBudgetLabel";
+            this.remainingBudgetLabel.Size = new System.Drawing.Size(288, 45);
+            this.remainingBudgetLabel.TabIndex = 6;
+            this.remainingBudgetLabel.Text = "Remaining Budget:";
             // 
             // budgetUtilizationLabel
             // 
@@ -165,21 +176,25 @@ namespace Budgetting
             this.netIncomeLabel.TabIndex = 0;
             this.netIncomeLabel.Text = "Monthly Net Income:";
             // 
-            // remainingBudgetLabel
+            // editBudgetButton
             // 
-            this.remainingBudgetLabel.AutoSize = true;
-            this.remainingBudgetLabel.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.remainingBudgetLabel.Location = new System.Drawing.Point(33, 499);
-            this.remainingBudgetLabel.Name = "remainingBudgetLabel";
-            this.remainingBudgetLabel.Size = new System.Drawing.Size(288, 45);
-            this.remainingBudgetLabel.TabIndex = 6;
-            this.remainingBudgetLabel.Text = "Remaining Budget:";
+            this.editBudgetButton.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.editBudgetButton.Location = new System.Drawing.Point(90, 376);
+            this.editBudgetButton.Margin = new System.Windows.Forms.Padding(6);
+            this.editBudgetButton.Name = "editBudgetButton";
+            this.editBudgetButton.Size = new System.Drawing.Size(371, 105);
+            this.editBudgetButton.TabIndex = 5;
+            this.editBudgetButton.Text = "Edit Budget";
+            this.editBudgetButton.UseVisualStyleBackColor = true;
+            this.editBudgetButton.Visible = false;
+            this.editBudgetButton.Click += new System.EventHandler(this.editBudgetButton_Click);
             // 
             // MainMenu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(13F, 32F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1486, 960);
+            this.Controls.Add(this.editBudgetButton);
             this.Controls.Add(this.currentBudgetPanel);
             this.Controls.Add(this.selectBudgetLabel);
             this.Controls.Add(this.budgetsList);
@@ -208,5 +223,6 @@ namespace Budgetting
         private System.Windows.Forms.Label taxBracketLabel;
         private System.Windows.Forms.Label yearlyTotalGrossIncomeLabel;
         private System.Windows.Forms.Label remainingBudgetLabel;
+        private System.Windows.Forms.Button editBudgetButton;
     }
 }

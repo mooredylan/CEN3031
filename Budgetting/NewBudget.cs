@@ -31,6 +31,29 @@ namespace Budgetting
             InitializeComponent();
 
             this.profile = profile;
+            this.newBudget.Id = 0;
+            this.newBudget.ProfileId = this.profile.Id;
+        }
+
+        public NewBudget(Profile profile, Budget budget)
+        {
+            InitializeComponent();
+
+            this.profile = profile;
+            this.newBudget = budget;
+            this.yearlyGrossIncomeTextBox.Text = Convert.ToString(this.newBudget.YearlyGrossIncome);
+            this.OtherIncomeTextBox.Text = Convert.ToString(this.newBudget.YearlyOtherIncome);
+            this.interestAndDividendsTextBox.Text = Convert.ToString(this.newBudget.YearlyInterestAndDividendIncome);
+            this.monthlyInvestingTextBox.Text = Convert.ToString(this.newBudget.MonthlyInvesting);
+            this.monthlySavingTextBox.Text = Convert.ToString(this.newBudget.MonthlySaving);
+            this.monthlyRentAndUtilitiesTextBox.Text = Convert.ToString(this.newBudget.MonthlyRentAndUtilities);
+            this.monthlyCreditCardtextBox.Text = Convert.ToString(this.newBudget.MonthlyCreditCard);
+            this.monthlyRecreationTextBox.Text = Convert.ToString(this.newBudget.MonthlyRecreation);
+            this.monthlyHealthInsuranceTextBox.Text = Convert.ToString(this.newBudget.MonthlyHealthInsurance);
+            this.monthlyStudentLoanTextBox.Text = Convert.ToString(this.newBudget.MonthlyStudentLoan);
+            this.monthlyCarPaymentTextBox.Text = Convert.ToString(this.newBudget.MonthlyCarPayment);
+            this.monthlyCarInsuranceTextBox.Text = Convert.ToString(this.newBudget.MonthlyCarInsurance);
+            this.monthlyFoodTextBox.Text = Convert.ToString(this.newBudget.MonthlyFood);
         }
 
         private void yearlyGrossIncomeTextBox_TextChanged(object sender, EventArgs e)
@@ -165,9 +188,6 @@ namespace Budgetting
 
         private void saveBudgetButton_Click(object sender, EventArgs e)
         {
-            this.newBudget.Id = 0;
-            this.newBudget.ProfileId = this.profile.Id;
-
             this.profile = this.db.SaveBudget(this.profile, this.newBudget);
 
             this.Close();
