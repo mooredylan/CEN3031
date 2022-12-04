@@ -58,7 +58,15 @@ namespace Budgetting
 
         private void yearlyGrossIncomeTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.YearlyGrossIncome = Convert.ToDouble(yearlyGrossIncomeTextBox.Text);
+            try 
+            {
+                this.newBudget.YearlyGrossIncome = Convert.ToDouble(yearlyGrossIncomeTextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+            
         }
 
         private void yearlyGrossIncomeTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -68,7 +76,15 @@ namespace Budgetting
 
         private void OtherIncomeTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.YearlyOtherIncome = Convert.ToDouble(OtherIncomeTextBox.Text);
+            try
+            {
+                this.newBudget.YearlyOtherIncome = Convert.ToDouble(OtherIncomeTextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+            
         }
 
         private void OtherIncomeTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -78,7 +94,15 @@ namespace Budgetting
 
         private void interestAndDividendsTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.YearlyInterestAndDividendIncome = Convert.ToDouble(interestAndDividendsTextBox.Text);
+            try
+            {
+                this.newBudget.YearlyInterestAndDividendIncome = Convert.ToDouble(interestAndDividendsTextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+            
         }
 
         private void interestAndDividendsTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -88,7 +112,15 @@ namespace Budgetting
 
         private void monthlyInvestingTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.MonthlyInvesting = Convert.ToDouble(monthlyInvestingTextBox.Text);
+            try
+            {
+                this.newBudget.MonthlyInvesting = Convert.ToDouble(monthlyInvestingTextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+            
         }
 
         private void monthlyInvestingTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -98,7 +130,15 @@ namespace Budgetting
 
         private void monthlySavingTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.MonthlySaving = Convert.ToDouble(monthlySavingTextBox.Text);
+            try
+            {
+                this.newBudget.MonthlySaving = Convert.ToDouble(monthlySavingTextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+            
         }
 
         private void monthlySavingTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -108,7 +148,16 @@ namespace Budgetting
 
         private void monthlyRentAndUtilitiesTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.MonthlyRentAndUtilities = Convert.ToDouble(monthlyRentAndUtilitiesTextBox.Text);
+            try
+            {
+                this.newBudget.MonthlyRentAndUtilities = Convert.ToDouble(monthlyRentAndUtilitiesTextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+
+            
         }
 
         private void monthlyRentAndUtilitiesTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -118,7 +167,15 @@ namespace Budgetting
 
         private void monthlyCreditCardtextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.MonthlyCreditCard = Convert.ToDouble(monthlyCreditCardtextBox.Text);
+            try
+            {
+                this.newBudget.MonthlyCreditCard = Convert.ToDouble(monthlyCreditCardtextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+            
         }
 
         private void monthlyCreditCardtextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -128,7 +185,15 @@ namespace Budgetting
 
         private void monthlyRecreationTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.MonthlyRecreation = Convert.ToDouble(monthlyRecreationTextBox.Text);
+            try
+            {
+                this.newBudget.MonthlyRecreation = Convert.ToDouble(monthlyRecreationTextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+            
         }
 
         private void monthlyRecreationTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -138,7 +203,16 @@ namespace Budgetting
 
         private void monthlyHealthInsuranceTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.MonthlyHealthInsurance = Convert.ToDouble(monthlyHealthInsuranceTextBox.Text);
+            try
+            {
+                this.newBudget.MonthlyHealthInsurance = Convert.ToDouble(monthlyHealthInsuranceTextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+
+            
         }
 
         private void monthlyHealthInsuranceTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -148,7 +222,15 @@ namespace Budgetting
 
         private void monthlyCarInsuranceTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.MonthlyCarInsurance = Convert.ToDouble(monthlyCarInsuranceTextBox.Text);
+            try
+            {
+                this.newBudget.MonthlyCarInsurance = Convert.ToDouble(monthlyCarInsuranceTextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+            
         }
 
         private void monthlyCarInsuranceTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -158,7 +240,15 @@ namespace Budgetting
 
         private void monthlyFoodTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.MonthlyFood = Convert.ToDouble(monthlyFoodTextBox.Text);
+            try
+            {
+                this.newBudget.MonthlyFood = Convert.ToDouble(monthlyFoodTextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+            
         }
 
         private void monthlyFoodTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -168,7 +258,15 @@ namespace Budgetting
 
         private void monthlyCarPaymentTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.MonthlyCarPayment = Convert.ToDouble(monthlyCarPaymentTextBox.Text);
+            try
+            {
+                this.newBudget.MonthlyCarPayment = Convert.ToDouble(monthlyCarPaymentTextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+            
         }
 
         private void monthlyCarPaymentTextBox_KeyPress(object sender, KeyPressEventArgs e)
@@ -178,7 +276,15 @@ namespace Budgetting
 
         private void monthlyStudentLoanTextBox_TextChanged(object sender, EventArgs e)
         {
-            this.newBudget.MonthlyStudentLoan = Convert.ToDouble(monthlyStudentLoanTextBox.Text);
+            try
+            {
+                this.newBudget.MonthlyStudentLoan = Convert.ToDouble(monthlyStudentLoanTextBox.Text);
+            }
+            catch (Exception except)
+            {
+                Console.WriteLine("Exception caught: ", except);
+            }
+            
         }
 
         private void monthlyStudentLoanTextBox_KeyPress(object sender, KeyPressEventArgs e)
