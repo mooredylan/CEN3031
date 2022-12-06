@@ -57,6 +57,8 @@ namespace Budgetting.Data
         {
             if(newProfile == null) return null;
 
+            if(newProfile.Username == "" || newProfile.Password == "") return null;
+
             Profile existing = this.context.Profiles.AsNoTracking().SingleOrDefault(x => x.Username.ToLower() == newProfile.Username.ToLower());
 
             if(existing != null)
