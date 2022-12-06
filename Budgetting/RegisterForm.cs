@@ -37,6 +37,8 @@ namespace Budgetting
             password = passwordField.Text;
         }
 
+
+        //registers user if username and password are valid
         private void registerButton_Click(object sender, EventArgs e)
         {
             accountExistsLabel.Visible = false;
@@ -66,6 +68,8 @@ namespace Budgetting
             }
         }
 
+
+        //redirects to login page
         private void button1_Click(object sender, EventArgs e)
         {
             this.Close();

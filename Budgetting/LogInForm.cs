@@ -38,6 +38,7 @@ namespace Budgetting
             password = passwordField.Text;
         }
 
+        //logs in user with valid username and password
         private void logInButton_Click(object sender, EventArgs e)
         {
             noAccountLabel.Visible = false;
@@ -64,6 +65,7 @@ namespace Budgetting
             
         }
 
+        //redirects to register page
         private void createAccountButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -74,12 +76,12 @@ namespace Budgetting
 
         private void showMainMenu(object obj)
         {
-            Application.Run(new MainMenu(profile)); //Later, pass profile object as arg for MainMenu()
+            Application.Run(new MainMenu(profile));
         }
 
         private void showRegister(object obj)
         {
-            Application.Run(new RegisterForm()); //Later, pass profile object as arg for MainMenu()
+            Application.Run(new RegisterForm());
         }
     }
 }

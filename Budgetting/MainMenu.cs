@@ -54,6 +54,8 @@ namespace Budgetting
             this.retirementSaveComboBox.SelectedItem = "10%";
         }
 
+
+        //logs out user
         private void logOutButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -77,6 +79,7 @@ namespace Budgetting
             Application.Run(new NewBudget(this.profile, this.curBudget));
         }
 
+        //redirects to new budget page
         private void newBudgetButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -85,6 +88,7 @@ namespace Budgetting
             th.Start();
         }
 
+        //updates main menu to show currently selected budget
         private void budgetsList_SelectedIndexChanged(object sender, EventArgs e)
         {
             this.selectBudgetLabel.Visible = false;
@@ -102,6 +106,7 @@ namespace Budgetting
             this.updateCharts();
         }
 
+        //updates budget labels
         private void updateBudgetLabels()
         {
             this.yearlyTotalGrossIncomeLabel.Text = String.Format("Total Gross Income: {0:C}",this.curBudget.YearlyTotalGrossIncome);
@@ -110,6 +115,7 @@ namespace Budgetting
             this.monthlyExpensesLabel.Text = String.Format("Monthly Expenses: {0:C}",this.curBudget.MonthlyTotalExpenses);
         }
 
+        //updates charts
         private void updateCharts()
         {
             this.updatetab1Chart();
@@ -119,6 +125,7 @@ namespace Budgetting
             this.updatetab5Chart();
         }
         
+        //updates data in chart for tab1
         private void updatetab1Chart()
         {
             List<double> values = new List<double>();
@@ -143,6 +150,7 @@ namespace Budgetting
             formsPlot1.Refresh();
         }
 
+        //updates data in chart for tab2
         private void updatetab2Chart()
         {
             List<double> values = new List<double>();
@@ -167,6 +175,7 @@ namespace Budgetting
             formsPlot2.Refresh();
         }
 
+        //updates data in chart for tab3
         private void updatetab3Chart()
         {
             List<double> values = new List<double>();
@@ -184,6 +193,7 @@ namespace Budgetting
             formsPlot3.Refresh();
         }
 
+        //updates data in chart for tab4
         private void updatetab4Chart()
         {
             List<double> values = new List<double>();
@@ -208,6 +218,7 @@ namespace Budgetting
             formsPlot4.Refresh();
         }
 
+        //updates data in chart for tab5
         private void updatetab5Chart()
         {
             object retirementComboBoxObj = this.retirementComboBox.SelectedItem;
@@ -252,6 +263,7 @@ namespace Budgetting
             formsPlot5.Refresh();
         }
 
+        //redirects to edit budget page
         private void editBudgetButton_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -260,6 +272,7 @@ namespace Budgetting
             th.Start();
         }
 
+        //adds chart data if valid name and value
         private void addIfExists(double value, string name, List<double> values, List<string> names)
         {
             if(value != 0 && !String.IsNullOrEmpty(name))
