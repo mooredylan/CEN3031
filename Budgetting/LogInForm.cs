@@ -17,6 +17,7 @@ namespace Budgetting
     public partial class LogInForm : Form
     {
         Thread th;
+        
         private string username, password;
 
         DatabaseRepository db = new DatabaseRepository();
