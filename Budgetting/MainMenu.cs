@@ -9,6 +9,7 @@ using System.Threading;
 using Budgetting.Data;
 using Budgetting.Models;
 using System.Linq;
+using ScottPlot;
 
 namespace Budgetting
 {
@@ -40,6 +41,17 @@ namespace Budgetting
             this.selectBudgetLabel.Visible = true;
             this.tabControl1.Visible = false;
             this.editBudgetButton.Visible = false;
+
+            this.retirementComboBox.Items.AddRange(new string[] {
+                "2025","2030","2035","2040","2045","2050","2055","2060","2065","2070",
+            });
+
+            this.retirementSaveComboBox.Items.AddRange(new string[] {
+                "4%","5%","6%","7%","8%","9%","10%","11%","12%","13%","14%","15%"
+            });
+
+            this.retirementComboBox.SelectedItem = "2050";
+            this.retirementSaveComboBox.SelectedItem = "10%";
         }
 
         private void logOutButton_Click(object sender, EventArgs e)
@@ -137,9 +149,9 @@ namespace Budgetting
             List<string> names = new List<string>();
 
             this.addIfExists(this.curBudget.MonthlyTotalExpenses, "Monthly Expenses", values, names);
-            this.addIfExists(this.curBudget.ExtraBudget, "Remaining Income", values, names);
+            this.addIfExists(this.curBudget.ExtraBudget > 0 ? this.curBudget.ExtraBudget : 0, "Remaining Income", values, names);
 
-            string centerText = $"Utilization\n{values[0] / values.Sum() * 100:00.0}%";
+            string centerText = $"Utilization\n{values[0] / (this.curBudget.MonthlyTotalExpenses + this.curBudget.ExtraBudget) * 100:00.0}%";
 
             Color color1 = Color.FromArgb(255, 0, 150, 200);
 
@@ -198,18 +210,45 @@ namespace Budgetting
 
         private void updatetab5Chart()
         {
+            object retirementComboBoxObj = this.retirementComboBox.SelectedItem;
+            object retirementSaveComboBox = this.retirementSaveComboBox.SelectedItem;
+
+            if(retirementComboBoxObj == null || retirementSaveComboBox == null || this.curBudget == null) 
+                return;
+
+            this.formsPlot5.Reset();
+
             List<double> values = new List<double>();
-            List<string> names = new List<string>();
+            List<double> positions = new List<double>();
+            List<string> labels = new List<string>();
 
-            this.addIfExists(this.curBudget.YearlyGrossIncome, "Gross Income", values, names);
-            this.addIfExists(this.curBudget.YearlyOtherIncome, "Other Income", values, names);
-            this.addIfExists(this.curBudget.YearlyInterestAndDividendIncome, "Interest and Dividends", values, names);
+            int year = Convert.ToInt32(retirementComboBoxObj.ToString());
 
-            var pie = this.formsPlot5.Plot.AddPie(values.ToArray());
-            pie.SliceLabels = names.ToArray();
-            pie.ShowPercentages = true;
+            double runningTotal = 0;
 
-            this.formsPlot5.Plot.Legend();
+            string percentString = retirementSaveComboBox.ToString().Replace("%", "");
+
+            double percent = Convert.ToInt32(percentString);
+            double percentOfIncome = this.curBudget.YearlyTotalNetIncome * (percent / 100);
+
+            for (int i = DateTime.Now.Year; i <= year; i++)
+            {
+                runningTotal = (runningTotal + percentOfIncome) * 1.07;
+                values.Add(runningTotal);
+                positions.Add(i);
+                labels.Add(i % 5 == 0 ? i.ToString() : "");
+            }
+
+            // add a bar graph to the plot
+            var bar = formsPlot5.Plot.AddBar(values.ToArray(), positions.ToArray());
+            formsPlot5.Plot.XTicks(positions.ToArray(), labels.ToArray());
+
+            // customize the width of bars (80% of the inter-position distance looks good)
+            bar.BarWidth = (positions[1] - positions[0]) * .8;
+
+            // adjust axis limits so there is no padding below the bar graph
+            formsPlot5.Plot.SetAxisLimits(yMin: 0);
+
             formsPlot5.Refresh();
         }
 
@@ -228,6 +267,16 @@ namespace Budgetting
                 values.Add(value);
                 names.Add(name);
             }
+        }
+
+        private void retirementComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.updatetab5Chart();
+        }
+
+        private void retirementSaveComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            this.updatetab5Chart();
         }
     }
 }
